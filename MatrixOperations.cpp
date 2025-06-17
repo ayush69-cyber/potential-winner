@@ -50,5 +50,8 @@ class Matrix
 };
 int main()
 {
+    Matrix m(3,3);
+    m.getMatrix();
+    m.displayMatrix();
     return 0;
 }
