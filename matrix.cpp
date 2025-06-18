@@ -42,3 +42,43 @@ void matrix::print() {
     std:: cout << std::endl;
   }
 }
+void matrix:: operator+(matrix mat)
+{
+  matrix matc(rows,columns);
+  for(int i = 0; i < rows ; i++)
+  {
+    for(int j = 0; j < columns ; j++)
+    {
+      matc.data[i][j] = data[i][j] + mat.data[i][j];
+    }
+  }
+  matc.print();
+}
+void matrix::operator-(matrix mat)
+{
+  matrix matc(rows,columns);
+  for(int i = 0; i < rows ; i++)
+  {
+    for(int j = 0; j < columns ; j++)
+    {
+      matc.data[i][j] = data[i][j] - mat.data[i][j];
+    }
+  }
+  matc.print();
+}
+void matrix :: operator*(matrix mat)
+{
+  matrix matc(rows,mat.columns);
+  for(int i = 0; i<rows ; i++)
+  {
+    for(int j = 0 ; j<mat.columns ; j++)
+    {
+      matc.data[i][j] = 0;
+      for(int k = 0 ; k < columns ; k++)
+      {
+        matc.data[i][j] += data[i][k]*mat.data[k][j];
+      }
+    }
+  }
+  matc.print();
+}
