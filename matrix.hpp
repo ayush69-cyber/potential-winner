@@ -5,7 +5,7 @@ class matrix {
   int rows;
   int columns;
 
-  float *data;
+  float **data;
 
 public:
   matrix();
@@ -16,5 +16,10 @@ public:
 
   void print();
 
+  void operator+(matrix);
+
+  void operator-(matrix);
+
+  void operator*(matrix);
   ~matrix();
 };
